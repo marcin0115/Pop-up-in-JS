@@ -1,0 +1,216 @@
+* {margin: 0; padding: 0;}
+
+body {
+   background-color: darkred;
+}
+
+.article {
+   width: 80%;
+   text-align: center;
+   margin: 0 auto;
+   min-height: 150vh;
+   background-color: darkkhaki;
+}
+.article h1 {
+   padding: 15px;
+   font-size: 28px;
+}
+.article button {
+   background-color: goldenrod;
+   margin-top: 20px;
+   border: 1px solid black;
+   padding: 7px 12px;
+   border-radius: 10%;
+   cursor: pointer;
+   animation: shake 3s linear infinite;
+}
+.article h3 {
+   font-size: 19px;
+}
+.article p {
+   font-size: 17px;
+}
+
+.article.blur {
+   filter: blur(2px);
+}
+
+img {
+   padding: 20px 0;
+   width: 90%; 
+}
+
+.questions {
+   height: 40vh;
+   line-height: 200%;
+   padding-top: 30px;
+}
+.questions p {
+   cursor: pointer;
+}
+.questions p:hover {
+   font-size: 18px;
+}
+
+
+/* MODAL: */
+.modal-wrap {
+   display: none;
+}
+
+.modal-wrap.active {
+   display: block;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rbga(0, 0, 0, .5);
+}
+
+.modal-wrap.active .modal {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 90%;
+   height: auto;
+   border: 2px solid black;
+}
+
+.modal .top {
+   flex-basis: 15%;
+   background-color: cadetblue;
+   text-align: center;
+}
+.modal .top h1
+{
+	font-size: 30px;
+	font-weight: 400;
+   color: darkred;
+   padding: 10px;
+}
+
+.modal .middle {
+   flex-grow: 1; 
+   padding: 0px 60px;
+	font-family: 'Open Sans', sans-serif;
+   font-size: 15px;
+   background-color:#ccc;
+}
+.modal .middle .row
+{
+	margin: 12px 10px;
+}
+.modal .middle .col
+{
+	display: inline-block;
+	margin: 0 10px;
+}
+
+.modal .middle .flex-group {
+   display: flex;
+}
+.modal .middle .flex-group .row {
+   margin: 10px 10px 5px;
+}
+.modal .middle .zamawiam {
+   font-size: 16px;
+   cursor: pointer;
+}
+.modal .middle #komentarz
+{
+	resize: none;
+}
+
+/* Close Popup */
+.hide{
+   position: absolute;
+   top: 0;
+   right: 0;
+   transform: translate(50%, -50%);
+   width: 40px;
+   height: 40px;
+   text-align: center;
+   line-height: 40px;
+   border-radius: 50%;
+   font-family: arial;
+   font-size: 30px;
+   background-color: goldenrod;
+   cursor: pointer;
+}
+
+.footer {
+   display: flex;
+   width: 80%;
+   height: 25vh;
+   line-height: 25vh;
+   text-align: center;
+   margin: 0 auto;
+   background-color: rgb(49, 105, 209);
+   color: #fff;
+}
+.footer p {
+   flex-grow: 1;
+   font-size: 22px;
+   padding: 5px;
+}
+.footer p:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+.copyright {
+   min-height: 7vh;
+   line-height: 7vh;
+   text-align: center;
+   font-size: 14px;
+   background-color: rgb(17, 17, 16);
+   color: white;
+}
+
+/* Button animation */
+@keyframes shake {
+   0% {transform: translateX(0)}
+   90% {transform: translateX(0)}
+   91% {transform: translateX(20px)}
+   92% {transform: translateX(-20px)}
+   93% {transform: translateX(20px)}
+   94% {transform: translateX(-20px)}
+   95% {transform: translateX(20px)}
+   96% {transform: translateX(-20px)}
+   97% {transform: translateX(20px)}
+   98% {transform: translateX(-20px)}
+   99% {transform: translateX(20px)}
+   100%{transform: translateX(-20px)}
+}
+
+/* MEDIA */
+@media (max-width: 500px) {
+   .article {
+      width: 100%;
+   }
+   .footer {
+      width: 100%;
+      height: auto;
+      flex-wrap: wrap;
+   }
+}
+
+@media (max-width: 860px) {
+   .modal-wrap.active .modal {
+      height: 90%;
+   }
+   .modal .middle {
+      padding: 0px 10px;
+      overflow: scroll;
+   }
+   .modal .middle .flex-group {
+      flex-wrap: wrap;
+   }
+   .modal .middle textarea {
+      width: 80%;
+   }
+}
